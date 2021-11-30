@@ -1,0 +1,113 @@
+{
+  "items": [
+    {
+      "_id": 1001,
+      "not_allow_promotion": false,
+      "PromotionRef": null,
+      "PromotionByProductId": null,
+      "properties": {
+        "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+      },
+      "product_id": 1,
+      "variant_id": 1,
+      "price_original": 100000,
+      "price": 90000,
+      "quantity": 1
+    },
+    {
+      "_id": 1002,
+      "not_allow_promotion": false,
+      "PromotionRef": null,
+      "PromotionByProductId": null,
+      "properties": {
+        "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+      },
+      "product_id": 2,
+      "variant_id": 2,
+      "price_original": 90000,
+      "price": 0,
+      "quantity": 2
+    },
+    {
+      "_id": 1003,
+      "not_allow_promotion": false,
+      "PromotionRef": null,
+      "PromotionByProductId": null,
+      "properties": {},
+      "product_id": 1,
+      "variant_id": 1,
+      "price_original": 100000,
+      "price": 100000,
+      "quantity": 1
+    },
+    {
+      "_id": 1005,
+      "not_allow_promotion": false,
+      "PromotionRef": null,
+      "PromotionByProductId": null,
+      "properties": {
+        "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
+      },
+      "product_id": 1,
+      "variant_id": 1,
+      "price_original": 100000,
+      "price": 90000,
+      "quantity": 1
+    },
+    {
+      "_id": 1006,
+      "not_allow_promotion": false,
+      "PromotionRef": null,
+      "PromotionByProductId": null,
+      "properties": {
+        "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
+      },
+      "product_id": 2,
+      "variant_id": 2,
+      "price_original": 90000,
+      "price": 90000,
+      "quantity": 2
+    },
+    {
+      "_id": 1007,
+      "not_allow_promotion": false,
+      "PromotionRef": null,
+      "PromotionByProductId": null,
+      "properties": {
+        "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
+      },
+      "product_id": 3,
+      "variant_id": 3,
+      "price_original": 80000,
+      "price": 0,
+      "quantity": 3
+    },
+    {
+      "_id": 1008,
+      "price_original": 0,
+      "price": 0,
+      "line_price": 0,
+      "quantity": 1,
+      "variant_id": 9999,
+      "product_id": 9999,
+      "not_allow_promotion": false,
+      "PromotionRef": null,
+      "PromotionByProductId": null,
+      "properties": {
+        "[PE] set_combo": "{ 'COMBO_1A_2B': { quantity: 2 }, 'COMBO_1A_2B_3C': { quantity: 3 } }",
+      },
+    }
+  ],
+  "items_recommended": [],
+  "has_promotion": false,
+  "attributes": {
+    "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256} ",
+    "[PE] combo COMBO_1A_2B_3C": "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 1, total_line: 3, at: 1637565314000 }"
+  },
+  "is_allow_coupon": true,
+  "customer_id": null,
+  "customer_group_ids": [],
+  "source_name": "web",
+  "location_id": null,
+  "token": "619b4219a8a30c19dce80196"
+}
