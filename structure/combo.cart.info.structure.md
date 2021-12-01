@@ -1,18 +1,19 @@
 # Thông tin combo trong cart
 
-* Các property hoặc attribute đều bắt đầu bằng prefix: `[PE]`
+## Attribute, Property prefix
+* app prefix: `[PE]`
+* buy x get y prefix: `[PE] BuyXGetY`
+* combo prefix: `[PE] combo`
 
-## property trong sản phẩm ảo
-* Cấu trúc:
-  * key: `[PE] set_combos`
-  * value:
-    * format: json string
-    * data:
-      ```json
-      { "{combo.code}": { "quantity": integer } }
-      ```
+## Property trong sản phẩm ảo
+* Dùng để FE trao đổi thông tin với App:
+  * Thêm combo
+  * Cập nhật số lượng
+  * Xóa combo
+* User không thấy, không cần dễ đọc
+* Cần dễ thay đổi cấu trúc, bổ sung field
 
-* ví dụ
+* Ví dụ
   * cần set 2 combo với thông tin sau:
     ```json
     { "code": "COMBO_1A_2B", "quantity":1 }
@@ -20,84 +21,141 @@
     { "code": "COMBO_1A_2B_3C", "quantity":2 }
     ```
 
-  * tạo property value data:
-    ```json
-    {
-      "COMBO_1A_2B": {
-        "quantity": 1
-      },
-      "COMBO_1A_2B_3C": {
-        "quantity": 2
-      }
-    }
-    ```
-
-  * tạo property
+  * Quy định hiện tại:
     ```json
     {
       "properties": {
-        "[PE] set_combos": "{\"COMBO_1A_2B\":{\"quantity\":1},\"COMBO_1A_2B_3C\":{\"quantity\":2}}"
+        "promotioncombo-add": "+COMBO_1A_2B"
       }
     }
     ```
 
+  * Đề nghị đổi thành:
+    ```json
+    // data
+    {
+      "properties": {
+        "[PE] combo set": {
+          "COMBO_1A_2B": {
+            "quantity": 1
+          },
+          "COMBO_1A_2B_3C": {
+            "quantity": 2
+          }
+        }
+      }
+    }
+    // === chuyển sang string ==>
+    {
+      "properties": {
+        "[PE] combo set": "{\"COMBO_1A_2B\":{\"quantity\":1},\"COMBO_1A_2B_3C\":{\"quantity\":2}}"
+      }
+    }
+    ```
 
-## attribute
-* Cấu trúc:
-  * key: `[PE] combo {combo.code}`
-  * value:
-    * format: json string
-    * data:
-      ```json
-      { "title": string, "quantity": integer, "total_lines": integer, "at": iso-date }
-      ```
-
-* ví dụ
+### Attribute
+* Ví dụ
   * 2 combo với thông tin sau:
     ```json
-    { "code": "COMBO_1A_2B", "title":"Combo 1A va 2B","quantity":1,"total_lines":2,"at":"2021-11-30T06:52:07.235Z"}
+    { "code": "COMBO_1A_2B", "title":"Combo 1A va 2B","quantity":1 }
 
-    { "code": "COMBO_1A_2B_3C", "title":"Combo 1A va 2B và 3C","quantity":2,"total_lines":3,"at":"2021-12-30T06:52:07.235Z"}
+    { "code": "COMBO_1A_2B_3C", "title":"Combo 1A va 2B và 3C","quantity":2 }
     ```
 
-  * tạo attribute value data:
-    ```json
-    { "title":"Combo 1A va 2B","quantity":1,"total_lines":2,"at":"2021-11-30T06:52:07.235Z"}
+  * Quy định hiện tại: chỉ add được 1 COMBO_1A_2B
+    * FS: quy định 2 kiểu:
 
-    { "title":"Combo 1A va 2B và 3C","quantity":2,"total_lines":3,"at":"2021-12-30T06:52:07.235Z"}
-    ```
-
-  * tạo attributes
+      * ![](data/img/2021-12-01-11-57-52.png)
+      * ![](data/img/2021-12-01-11-57-08.png)
+    
     ```json
+    // data
     {
       "attributes": {
-        "[PE] combo COMBO_1A_2B": "{\"title\":\"Combo 1A va 2B\",\"quantity\":1,\"total_lines\":2,\"at\":\"2021-11-30T06:52:07.235Z\"}",
-        "[PE] combo COMBO_1A_2B_3C": "{\"title\":\"Combo 1A va 2B và 3C\",\"quantity\":2,\"total_lines\":3,\"at\":\"2021-12-30T06:52:07.235Z\"}"
+        "promotioncombo-detail": {
+          "COMBO_1A_2B": 1,
+          "COMBO_1A_2B_3C": 2
+        }
+      }
+    }
+    // === chuyển sang string ==>
+    {
+      "attributes": {
+        "promotioncombo-detail": "{\"COMBO_1A_2B\":1,\"COMBO_1A_2B_3C\":2}"
       }
     }
     ```
 
-## property trong combo item
-* Cấu trúc:
-  * key: `[PE] combo_item`
-  * value:
-    * format: json string
-    * data:
-      ```json
-      { "combo_code": string, "combo_quantity": integer, "item_quantity": integer, "at": iso-date }
-      ```
-
-* ví dụ
-  * combo item với thông tin sau:
+  * Đề nghị đổi thành:
     ```json
-    { "combo_code": "COMBO_1A_2B", "combo_quantity":1,"item_quantity":2,"at":"2021-11-30T06:52:07.235Z"}
+    // data
+    {
+      "attributes": {
+        "[PE] combo COMBO_1A_2B": {
+          "title": "Combo 1A va 2B",
+          "quantity": 1
+        },
+        "[PE] combo COMBO_1A_2B_3C": {
+          "title": "Combo 1A va 2B và 3C",
+          "quantity": 2
+        }
+      }
+    }
+    // === chuyển sang string ==>
+    {
+      "attributes": {
+        "[PE] combo COMBO_1A_2B": "{\"title\":\"Combo 1A va 2B\",\"quantity\":1}",
+        "[PE] combo COMBO_1A_2B_3C": "{\"title\":\"Combo 1A va 2B và 3C\",\"quantity\":2}"
+      }
+    }
+    // hoặc dễ đọc
+    {
+      "attributes": {
+        "[PE] combo COMBO_1A_2B": "1 | Combo 1A va 2B",
+        "[PE] combo COMBO_1A_2B_3C": "2 | Combo 1A va 2B và 3C"
+      }
+    }
     ```
 
-  * sẽ tạo property
+### Property combo item
+* Ví dụ
+  * 2 combo với thông tin sau:
     ```json
+    { "code": "COMBO_1A_2B", "title":"Combo 1A va 2B","quantity":1 }
+
+    { "code": "COMBO_1A_2B_3C", "title":"Combo 1A va 2B và 3C","quantity":2 }
+    ```
+
+  * Quy định hiện tại: chỉ add được 1 COMBO_1A_2B
+    * FS
+      * ![](data/img/![](data/img/2021-12-01-11-57-52.png).png)
+    * Excel Example
+      * ![](data/img/2021-12-01-12-01-56.png)
+    
+    ```json
+    // data
     {
       "properties": {
-        "[PE] combo_item": "{\"combo_code\":\"COMBO_1A_2B\",\"combo_quantity\":1,\"item_quantity\":2,\"at\":\"2021-12-30T06:52:07.235Z\"}"
+        "promotioncombo-item": "COMBO_1A_2B"
+      }
+    }
+    ```
+
+  * Đề nghị đổi thành:
+    ```json
+    // data
+    {
+      "properties": {
+        "[PE] combo item": {
+          "combo_code": "COMBO_1A_2B",
+          "item_quantity": 2
+        }
+      }
+    }
+    // === chuyển sang string ==>
+    {
+      "properties": {
+        "[PE] combo item": "{\"combo_code\":\"COMBO_1A_2B\",\"item_quantity\":2}"
       }
     }
     ```

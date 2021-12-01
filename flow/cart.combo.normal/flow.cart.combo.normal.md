@@ -4,18 +4,18 @@
   - [Mục đích](#mục-đích)
   - [Các bước](#các-bước)
     - [Thêm 1 combo 1A_2B gồm 1 A (giá 90k) và 2 B (giá 0) vào cart](#thêm-1-combo-1a_2b-gồm-1-a-giá-90k-và-2-b-giá-0-vào-cart)
-      - [FE thêm sản phẩm ảo có property [set_combo] và cart](#fe-thêm-sản-phẩm-ảo-có-property-set_combo-và-cart)
+      - [FE thêm sản phẩm ảo có property [combo set] và cart](#fe-thêm-sản-phẩm-ảo-có-property-combo set-và-cart)
       - [Cart proxy gọi App](#cart-proxy-gọi-app)
       - [App xử lý cart](#app-xử-lý-cart)
     - [Thêm 1 A (giá 100k) vào cart](#thêm-1-a-giá-100k-vào-cart)
       - [Cart proxy gọi App](#cart-proxy-gọi-app-1)
       - [App xử lý cart](#app-xử-lý-cart-1)
     - [Thêm 1 combo 1A_2B_3C gồm 1 A (giá 100k) và 2 B (giá 90k) và 3 C (giá 0) vào cart](#thêm-1-combo-1a_2b_3c-gồm-1-a-giá-100k-và-2-b-giá-90k-và-3-c-giá-0-vào-cart)
-      - [FE thêm sản phẩm ảo có property [set_combo] và cart](#fe-thêm-sản-phẩm-ảo-có-property-set_combo-và-cart-1)
+      - [FE thêm sản phẩm ảo có property [combo set] và cart](#fe-thêm-sản-phẩm-ảo-có-property-combo set-và-cart-1)
       - [Cart proxy gọi App](#cart-proxy-gọi-app-2)
       - [App xử lý cart](#app-xử-lý-cart-2)
     - [Chỉnh số lượng combo 1A_2B lên 2, chỉnh số lượng combo 1A_2B_3C lên 3](#chỉnh-số-lượng-combo-1a_2b-lên-2-chỉnh-số-lượng-combo-1a_2b_3c-lên-3)
-      - [FE thêm sản phẩm ảo có property [set_combo] và cart](#fe-thêm-sản-phẩm-ảo-có-property-set_combo-và-cart-2)
+      - [FE thêm sản phẩm ảo có property [combo set] và cart](#fe-thêm-sản-phẩm-ảo-có-property-combo set-và-cart-2)
       - [Cart proxy gọi App](#cart-proxy-gọi-app-3)
       - [App xử lý cart](#app-xử-lý-cart-3)
 
@@ -43,7 +43,7 @@
 
 ### Thêm 1 combo 1A_2B gồm 1 A (giá 90k) và 2 B (giá 0) vào cart
 
-#### FE thêm sản phẩm ảo có property [set_combo] và cart
+#### FE thêm sản phẩm ảo có property [combo set] và cart
 
 #### Cart proxy gọi App
 * data
@@ -62,7 +62,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] set_combo": "{ COMBO_1A_2B: { quantity: 1 } }"
+          "[PE] combo set": "{ COMBO_1A_2B: { quantity: 1 } }"
         },
       }
     ],
@@ -101,7 +101,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -115,7 +115,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -151,7 +151,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -165,7 +165,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -206,7 +206,7 @@
     * Tìm thấy
       * COMBO_1A_2B:
         * có attribute hợp lệ
-        * có property combo_item hợp lệ
+        * có property combo item hợp lệ
   * Lấy danh sách combo [COMBO_1A_2B] từ DB
   * Kiểm tra combo khả dụng: hợp lệ
 
@@ -220,7 +220,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -234,7 +234,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -271,7 +271,7 @@
 
 ### Thêm 1 combo 1A_2B_3C gồm 1 A (giá 100k) và 2 B (giá 90k) và 3 C (giá 0) vào cart
 
-#### FE thêm sản phẩm ảo có property [set_combo] và cart
+#### FE thêm sản phẩm ảo có property [combo set] và cart
 
 #### Cart proxy gọi App
 * data
@@ -284,7 +284,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -298,7 +298,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -330,7 +330,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] set_combo": "{ COMBO_1A_2B_3C: { quantity: 1 } }"
+          "[PE] combo set": "{ COMBO_1A_2B_3C: { quantity: 1 } }"
         }
       }
     ],
@@ -354,7 +354,7 @@
     * Tìm thấy
       * COMBO_1A_2B:
         * có attribute hợp lệ
-        * có property combo_item hợp lệ
+        * có property combo item hợp lệ
       * COMBO_1A_2B_3C:
         * có sản phẩm ảo hợp lệ
   * Lấy danh sách combo [COMBO_1A_2B, COMBO_1A_2B_3C] từ DB
@@ -374,7 +374,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -388,7 +388,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -414,7 +414,7 @@
         "PromotionRef": "COMBO_1A_2B_3C",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -428,7 +428,7 @@
         "PromotionRef": "COMBO_1A_2B_3C",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -442,7 +442,7 @@
         "PromotionRef": "COMBO_1A_2B_3C",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
         },
         "product_id": 3,
         "variant_id": 3,
@@ -468,7 +468,7 @@
 
 ### Chỉnh số lượng combo 1A_2B lên 2, chỉnh số lượng combo 1A_2B_3C lên 3
 
-#### FE thêm sản phẩm ảo có property [set_combo] và cart
+#### FE thêm sản phẩm ảo có property [combo set] và cart
 
 #### Cart proxy gọi App
 * data
@@ -481,7 +481,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -495,7 +495,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -521,7 +521,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -535,7 +535,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -549,7 +549,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
         },
         "product_id": 3,
         "variant_id": 3,
@@ -569,7 +569,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] set_combo": "{ 'COMBO_1A_2B': { quantity: 2 }, 'COMBO_1A_2B_3C': { quantity: 3 } }",
+          "[PE] combo set": "{ 'COMBO_1A_2B': { quantity: 2 }, 'COMBO_1A_2B_3C': { quantity: 3 } }",
         },
       }
     ],
@@ -594,10 +594,10 @@
     * Tìm thấy
       * COMBO_1A_2B:
         * có attribute hợp lệ
-        * có property combo_item hợp lệ
+        * có property combo item hợp lệ
       * COMBO_1A_2B_3C:
         * có attribute hợp lệ
-        * có property combo_item hợp lệ
+        * có property combo item hợp lệ
   * Lấy danh sách combo [COMBO_1A_2B, COMBO_1A_2B_3C] từ DB
   * Kiểm tra combo khả dụng: hợp lệ
   * Chỉnh số lượng COMBO_1A_2B lên 2
@@ -620,7 +620,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 2, at: 1637565315000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 1, at: 1637565315000 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -634,7 +634,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 4, at: 1637565315000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 2, at: 1637565315000 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -660,7 +660,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 3, at: 1637565316000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 1, at: 1637565316000 }"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -674,7 +674,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 6, at: 1637565316000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 2, at: 1637565316000 }"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -688,7 +688,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo_item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 9, at: 1637565316000 }"
+          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 3, at: 1637565316000 }"
         },
         "product_id": 3,
         "variant_id": 3,
