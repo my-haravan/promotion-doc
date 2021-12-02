@@ -1,5 +1,7 @@
 # FLOW.CART.COMBO.WRONG
 
+## Check thông tin trong cart (chưa kiểm tra db)
+---
 ## Sản phẩm ảo không hợp lệ
 * Do:
   * property value không hợp lệ
@@ -15,6 +17,10 @@
     * Xóa các thông tin của combo đó ra khỏi cart, bao gồm:
       * attribute combo
       * lines combo item
+
+## Check DB
+
+-------------------
 
 ## Combo không khả dụng
 * Do:

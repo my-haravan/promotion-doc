@@ -36,7 +36,7 @@
 * data
   ```
   items:
-    1   | virtual    | 0        | properties: {"[PE] combo set":"{ COMBO_1A_2B: { quantity: 1 } }"}
+    1   | virtual    | 0        | properties: {"PE-combo-set":"{ COMBO_1A_2B: 1 }"}
   attributes:
   ```
 
@@ -56,7 +56,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo set": "{ COMBO_1A_2B: { quantity: 1 } }"
+          "PE-combo-set": "{ COMBO_1A_2B: 1 }"
         },
       }
     ],
@@ -88,10 +88,10 @@
 * Dữ liệu trả về:
   ```
   items:
-    1   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"}
-    2   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"}
+    1   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    2   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+    "PE-combo-detail COMBO_1A_2B" : "1"
   ```
 
   ```json
@@ -104,7 +104,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -119,7 +119,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -131,7 +131,7 @@
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+      "PE-combo-detail COMBO_1A_2B": "1"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -148,11 +148,11 @@
 * data
   ```
   items:
-    1   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"}
-    2   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"}
+    1   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    2   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+    "PE-combo-detail COMBO_1A_2B" : "1"
   ```
 
   ```json
@@ -165,7 +165,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -180,7 +180,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -205,7 +205,7 @@
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+      "PE-combo-detail COMBO_1A_2B": "1"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -230,11 +230,11 @@
 * Dữ liệu trả về:
   ```
   items:
-    1   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"}
-    2   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"}
+    1   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    2   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+    "PE-combo-detail COMBO_1A_2B" : "1"
   ```
 
   ```json
@@ -247,7 +247,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -262,7 +262,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -287,7 +287,7 @@
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+      "PE-combo-detail COMBO_1A_2B": "1"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -306,12 +306,12 @@
 * data
   ```
   items:
-    1   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"}
-    2   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"}
+    1   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    2   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
-    1   | virtual    | 0        | properties: {"[PE] combo set":"{ COMBO_1A_2B_3C: { quantity: 1 } }"}
+    1   | virtual    | 0        | properties: {"PE-combo-set":"{ COMBO_1A_2B_3C: 1 }"}
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+    "PE-combo-detail COMBO_1A_2B" : "1"
   ```
 
   ```json
@@ -324,7 +324,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -339,7 +339,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -373,14 +373,14 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo set": "{ COMBO_1A_2B_3C: { quantity: 1 } }"
+          "PE-combo-set": "{ COMBO_1A_2B_3C: 1 }"
         }
       }
     ],
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256 }"
+      "PE-combo-detail COMBO_1A_2B": "1"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -410,15 +410,15 @@
 * Dữ liệu trả về:
   ```
   items:
-    1   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"}
-    2   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"}
+    1   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    2   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
-    1   | A          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"}
-    2   | B          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"}
-    3   | C          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"}
+    1   | A          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    2   | B          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    3   | C          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256} "
-    "[PE] combo COMBO_1A_2B_3C" : "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 1, total_line: 3, at: 1637565314000 }"
+    "PE-combo-detail COMBO_1A_2B" : "1"
+    "PE-combo-detail COMBO_1A_2B_3C" : "1"
   ```
 
   ```json
@@ -431,7 +431,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -446,7 +446,7 @@
         "PromotionRef": "COMBO_1A_2B",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -474,7 +474,7 @@
         "PromotionRef": "COMBO_1A_2B_3C",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -489,7 +489,7 @@
         "PromotionRef": "COMBO_1A_2B_3C",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -504,7 +504,7 @@
         "PromotionRef": "COMBO_1A_2B_3C",
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 3,
         "variant_id": 3,
@@ -516,8 +516,8 @@
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256} ",
-      "[PE] combo COMBO_1A_2B_3C": "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 1, total_line: 3, at: 1637565314000 }"
+      "PE-combo-detail COMBO_1A_2B": "1",
+      "PE-combo-detail COMBO_1A_2B_3C": "1"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -536,16 +536,16 @@
 * data
   ```
   items:
-    1   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"}
-    2   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"}
+    1   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    2   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
-    1   | A          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"}
-    2   | B          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"}
-    3   | C          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"}
-    1   | virtual    | 0        | properties: {"[PE] combo set":"{ 'COMBO_1A_2B': { quantity: 2 }, 'COMBO_1A_2B_3C': { quantity: 3 } }"}
+    1   | A          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    2   | B          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    3   | C          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    1   | virtual    | 0        | properties: {"PE-combo-set":"{ 'COMBO_1A_2B': 2, 'COMBO_1A_2B_3C': 3 }"}
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256} "
-    "[PE] combo COMBO_1A_2B_3C" : "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 1, total_line: 3, at: 1637565314000 }"
+    "PE-combo-detail COMBO_1A_2B" : "1"
+    "PE-combo-detail COMBO_1A_2B_3C" : "1"
   ```
 
   ```json
@@ -558,7 +558,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -573,7 +573,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -601,7 +601,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -616,7 +616,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -631,7 +631,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 3,
         "variant_id": 3,
@@ -652,15 +652,15 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo set": "{ 'COMBO_1A_2B': { quantity: 2 }, 'COMBO_1A_2B_3C': { quantity: 3 } }",
+          "PE-combo-set": "{ 'COMBO_1A_2B': 2, 'COMBO_1A_2B_3C': 3 }",
         },
       }
     ],
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256} ",
-      "[PE] combo COMBO_1A_2B_3C": "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 1, total_line: 3, at: 1637565314000 }"
+      "PE-combo-detail COMBO_1A_2B": "1",
+      "PE-combo-detail COMBO_1A_2B_3C": "1"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -699,15 +699,15 @@
 
   ```
   items:
-    2   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 1, at: 1637565315000 }"}
-    4   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 2, at: 1637565315000 }"}
+    2   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    4   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
-    3   | A          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 1, at: 1637565316000 }"}
-    6   | B          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 2, at: 1637565316000 }"}
-    9   | C          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 3, at: 1637565316000 }"}
+    3   | A          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    6   | B          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    9   | C          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 2, total_line: 2, at: 1637565315000} "
-    "[PE] combo COMBO_1A_2B_3C" : "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 3, total_line: 3, at: 1637565316000 }"
+    "PE-combo-detail COMBO_1A_2B" : "2"
+    "PE-combo-detail COMBO_1A_2B_3C" : "3"
   ```
 
   ```json
@@ -720,7 +720,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 1, at: 1637565315000 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -735,7 +735,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 2, at: 1637565315000 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -763,7 +763,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 1, at: 1637565316000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -778,7 +778,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 2, at: 1637565316000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -793,7 +793,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 3, item_quantity: 3, at: 1637565316000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 3,
         "variant_id": 3,
@@ -805,8 +805,8 @@
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 2, total_line: 2, at: 1637565315000} ",
-      "[PE] combo COMBO_1A_2B_3C": "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 3, total_line: 3, at: 1637565316000 }"
+      "PE-combo-detail COMBO_1A_2B": "2",
+      "PE-combo-detail COMBO_1A_2B_3C": "3"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -825,7 +825,7 @@
 {
   "__title": "virtual",
   "properties": {
-    "[PE] combo set": "{ 'COMBO_1A_2B_3C': { quantity: 0 } }",
+    "PE-combo-set": "{ 'COMBO_1A_2B_3C': 0 }",
   },
 }
 ```
@@ -834,16 +834,16 @@
 * data
   ```
   items:
-    1   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"}
-    2   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"}
+    1   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    2   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
-    1   | A          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"}
-    2   | B          | 90000    | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"}
-    3   | C          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"}
-    1   | virtual    | 0        | properties: {"[PE] combo set":"{ 'COMBO_1A_2B_3C': { quantity: 0 } }"}
+    1   | A          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    2   | B          | 90000    | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    3   | C          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"}
+    1   | virtual    | 0        | properties: {"PE-combo-set":"{ 'COMBO_1A_2B_3C': 0 }"}
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256} "
-    "[PE] combo COMBO_1A_2B_3C" : "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 1, total_line: 3, at: 1637565314000 }"
+    "PE-combo-detail COMBO_1A_2B" : "1"
+    "PE-combo-detail COMBO_1A_2B_3C" : "1"
   ```
 
   ```json
@@ -856,7 +856,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 1, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -871,7 +871,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 1, item_quantity: 2, at: 1637565313256 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -899,7 +899,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 1, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -914,7 +914,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 2, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -929,7 +929,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B_3C', combo_quantity: 1, item_quantity: 3, at: 1637565314000 }"
+          "PE-combo-item": "COMBO_1A_2B_3C | Combo 1 sp A và 2 sp B và 3 sp C"
         },
         "product_id": 3,
         "variant_id": 3,
@@ -950,15 +950,15 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo set": "{ 'COMBO_1A_2B_3C': { quantity: 0 } }",
+          "PE-combo-set": "{ 'COMBO_1A_2B_3C': 0 }",
         },
       }
     ],
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 1, total_line: 2, at: 1637565313256} ",
-      "[PE] combo COMBO_1A_2B_3C": "{ title: 'Combo 1 sp A và 2 sp B và 3 sp C', quantity: 1, total_line: 3, at: 1637565314000 }"
+      "PE-combo-detail COMBO_1A_2B": "1",
+      "PE-combo-detail COMBO_1A_2B_3C": "1"
     },
     "is_allow_coupon": true,
     "customer_id": null,
@@ -990,11 +990,11 @@
 * Dữ liệu trả về:
   ```
   items:
-    2   | A          | 100000   | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 1, at: 1637565315000 }"}
-    4   | B          | 0        | properties: {"[PE] combo item":"{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 2, at: 1637565315000 }"}
+    2   | A          | 100000   | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
+    4   | B          | 0        | properties: {"PE-combo-item":"COMBO_1A_2B | Combo 1 A và 2 B"}
     1   | A          | 100000   | 
   attributes:
-    "[PE] combo COMBO_1A_2B" : "{ title: 'Combo 1 sp A và 2 sp B', quantity: 2, total_line: 2, at: 1637565315000} "
+    "PE-combo-detail COMBO_1A_2B" : "2"
   ```
 
   ```json
@@ -1007,7 +1007,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 1, at: 1637565315000 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 1,
         "variant_id": 1,
@@ -1022,7 +1022,7 @@
         "PromotionRef": null,
         "PromotionByProductId": null,
         "properties": {
-          "[PE] combo item": "{ combo_code: 'COMBO_1A_2B', combo_quantity: 2, item_quantity: 2, at: 1637565315000 }"
+          "PE-combo-item": "COMBO_1A_2B | Combo 1 A và 2 B"
         },
         "product_id": 2,
         "variant_id": 2,
@@ -1047,7 +1047,7 @@
     "items_recommended": [],
     "has_promotion": false,
     "attributes": {
-      "[PE] combo COMBO_1A_2B": "{ title: 'Combo 1 sp A và 2 sp B', quantity: 2, total_line: 2, at: 1637565315000} "
+      "PE-combo-detail COMBO_1A_2B": "2"
     },
     "is_allow_coupon": true,
     "customer_id": null,
