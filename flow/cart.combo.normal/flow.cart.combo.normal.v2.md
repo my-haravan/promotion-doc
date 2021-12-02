@@ -3,14 +3,14 @@
 - [FLOW.CART.COMBO.NORMAL](#flowcartcombonormal)
   - [Tổng quan](#tổng-quan)
   - [Các bước:](#các-bước)
-    - [Thêm combo: thêm 1 combo 1A_2B gồm 1 A (giá 90k) và 2 B (giá 0) vào cart](#thêm-combo-thêm-1-combo-1a_2b-gồm-1-a-giá-90k-và-2-b-giá-0-vào-cart)
+    - [Thêm combo: thêm 1 combo 1A_2B vào cart](#thêm-combo-thêm-1-combo-1a_2b-vào-cart)
       - [FE thêm sản phẩm ảo có property [PE-combo-set] và cart](#fe-thêm-sản-phẩm-ảo-có-property-pe-combo-set-và-cart)
       - [Cart proxy gọi App](#cart-proxy-gọi-app)
       - [App xử lý cart](#app-xử-lý-cart)
-    - [Thêm sản phẩm thường: thêm 1 A (giá 100k) vào cart](#thêm-sản-phẩm-thường-thêm-1-a-giá-100k-vào-cart)
+    - [Thêm sản phẩm thường: thêm 1 A vào cart](#thêm-sản-phẩm-thường-thêm-1-a-vào-cart)
       - [Cart proxy gọi App](#cart-proxy-gọi-app-1)
       - [App xử lý cart](#app-xử-lý-cart-1)
-    - [Thêm combo khác: thêm 1 combo 1A_2B_3C gồm 1 A (giá 100k) và 2 B (giá 90k) và 3 C (giá 0) vào cart](#thêm-combo-khác-thêm-1-combo-1a_2b_3c-gồm-1-a-giá-100k-và-2-b-giá-90k-và-3-c-giá-0-vào-cart)
+    - [Thêm combo khác: thêm 1 combo 1A_2B_3C vào cart](#thêm-combo-khác-thêm-1-combo-1a_2b_3c-vào-cart)
       - [FE thêm sản phẩm ảo có property [PE-combo-set] và cart](#fe-thêm-sản-phẩm-ảo-có-property-pe-combo-set-và-cart-1)
       - [Cart proxy gọi App](#cart-proxy-gọi-app-2)
       - [App xử lý cart](#app-xử-lý-cart-2)
@@ -24,36 +24,21 @@
       - [App xử lý cart](#app-xử-lý-cart-4)
 
 ## Tổng quan
-* Thêm combo: thêm 1 combo 1A_2B gồm 1 A (giá 90k) và 2 B (giá 0) vào cart
+* Thêm combo: thêm 1 combo 1A_2B vào cart
 
-* Thêm sản phẩm thường: thêm 1 A (giá 100k) vào cart
+* Thêm sản phẩm thường: thêm 1 A vào cart
 
-* Thêm combo khác: thêm 1 combo 1A_2B_3C gồm 1 A (giá 100k) và 2 B (giá 90k) và 3 C (giá 0) vào cart
+* Thêm combo khác: thêm 1 combo 1A_2B_3C vào cart
 
 * Cập nhật combo: chỉnh số lượng combo 1A_2B lên 2, chỉnh số lượng combo 1A_2B_3C lên 3
-  * Ta được cart như sau:
-    ```
-    2 A (giá 90k) thuộc combo 1A_2B
-    4 B (giá 0) thuộc combo 1A_2B
-    1 A (giá 100k)
-    3 A (giá 100k) thuộc combo 1A_2B_3C
-    6 B (giá 90k) thuộc combo 1A_2B_3C
-    9 C (giá 0) thuộc combo 1A_2B_3C
-    ```
 
 * Xóa combo: xóa combo 1A_2B_3C
-  * Ta được cart như sau:
-    ```
-    2 A (giá 90k) thuộc combo 1A_2B
-    4 B (giá 0) thuộc combo 1A_2B
-    1 A (giá 100k)
-    ```
 
 ## Các bước:
 
 > Lưu ý: field `__title` không có trong dữ liệu thật, được bổ sung để dễ đọc
 
-### Thêm combo: thêm 1 combo 1A_2B gồm 1 A (giá 90k) và 2 B (giá 0) vào cart
+### Thêm combo: thêm 1 combo 1A_2B vào cart
 
 ----------
 
@@ -173,7 +158,7 @@
   }
   ```
 
-### Thêm sản phẩm thường: thêm 1 A (giá 100k) vào cart
+### Thêm sản phẩm thường: thêm 1 A vào cart
 
 ----------
 
@@ -335,7 +320,7 @@
 
 ----------
 
-### Thêm combo khác: thêm 1 combo 1A_2B_3C gồm 1 A (giá 100k) và 2 B (giá 90k) và 3 C (giá 0) vào cart
+### Thêm combo khác: thêm 1 combo 1A_2B_3C vào cart
 
 ----------
 
